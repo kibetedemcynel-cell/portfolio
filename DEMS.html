@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demcynel John K. Dechoza| My Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #080d18;
+            color: #e5eaf3;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            background: #101a2e;
+            color: #cbd5e1;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        header h2 {
+            color: #60a5fa;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #e5eaf3;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        /* HOME */
+        .home {
+            min-height: 90vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 60px 10%;
+            gap: 50px;
+        }
+
+        .home-content {
+            max-width: 550px;
+        }
+
+        .home-content h3 {
+            color: #60a5fa;
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .home-content h1 {
+            font-size: 48px;
+            color: #ffffff;
+            margin: 10px 0;
+            line-height: 1.2;
+        }
+
+        .home-content h2 {
+            font-size: 24px;
+            color: #93c5fd;
+            margin-bottom: 18px;
+        }
+
+        .home-content p {
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #0c1423;
+            transform: translateY(-3px);
+        }
+
+        /* PROFILE IMAGE */
+        .image img {
+            width: 340px;
+            height: 340px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            border: 9px solid #e5eaf3;
+            outline: 3px solid #2563eb;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+        }
+
+        /* GENERAL SECTIONS */
+        section:not(.home) {
+            padding: 75px 10%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 34px;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .section-line {
+            width: 65px;
+            height: 4px;
+            background: #2563eb;
+            margin: 0 auto 30px;
+            border-radius: 5px;
+        }
+
+        .about {
+            background: #101827;
+        }
+
+        .about p {
+            max-width: 750px;
+            margin: auto;
+            color: #cbd5e1;
+            font-size: 17px;
+        }
+
+        /* EDUCATION */
+        .education {
+            background: #0c1423;
+        }
+
+        .education-card {
+            max-width: 650px;
+            margin: auto;
+            background: #0b1220;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+            border-left: 5px solid #2563eb;
+        }
+
+        .education-card h3 {
+            color: #93c5fd;
+            margin-bottom: 10px;
+        }
+
+        /* SKILLS */
+        .skills {
+            background: #101827;
+        }
+
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #0b1220;
+            width: 200px;
+            padding: 25px 15px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .skill-card h3 {
+            color: #93c5fd;
+            font-size: 20px;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #0c1423;
+        }
+
+        .contact-box {
+            max-width: 600px;
+            margin: auto;
+            background: #0b1220;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .contact-box p {
+            margin: 12px 0;
+            color: #cbd5e1;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-box strong {
+            color: #93c5fd;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0c1423;
+            color: #e5eaf3;
+            text-align: center;
+            padding: 22px;
+        }
+
+        footer span {
+            color: #60a5fa;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            header {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .home {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 50px 7%;
+            }
+
+            .home-content h1 {
+                font-size: 36px;
+            }
+
+            .home-content h2 {
+                font-size: 21px;
+            }
+
+            .image img {
+                width: 270px;
+                height: 270px;
+            }
+
+            section:not(.home) {
+                padding: 60px 7%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .home-content h1 {
+                font-size: 30px;
+            }
+
+            .image img {
+                width: 220px;
+                height: 220px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .skill-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h2>DEMCYNEL</h2>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HOME SECTION -->
+    <section class="home" id="home">
+
+        <div class="home-content">
+            <h3>WELCOME TO MY PORTFOLIO</h3>
+
+            <h1>Hi, I'm Demcynel!</h1>
+
+            <h2>BSIT Student | Future IT Professional</h2>
+
+            <p>
+                Welcome to my personal portfolio! I am Demcynel John K. Dechoza,
+                a 3rd-year Bachelor of Science in Information Technology
+                student at NORSU Siaton Campus. I am passionate about
+                technology, programming, and continuously learning new skills.
+            </p>
+
+            <a href="#about" class="btn">Discover More</a>
+        </div>
+
+        <div class="image">
+            <img src="dems.jpg" alt="Demcynel John K. Dechoza">
+        </div>
+
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+
+        <h2 class="section-title">About Me</h2>
+        <div class="section-line"></div>
+
+        <p>
+            My name is Demcynel John K. Dechoza, and I am 20 years old.
+            I am currently a third-year BSIT student at Negros Oriental
+            State University - Siaton Campus. I enjoy learning about
+            computers, programming, and different technologies.
+            I always aim to improve my knowledge and develop my skills
+            as I prepare for my future career in the IT industry.
+        </p>
+
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section class="education" id="education">
+
+        <h2 class="section-title">My Education</h2>
+        <div class="section-line"></div>
+
+        <div class="education-card">
+            <h3>College Education</h3>
+            <h4>Negros Oriental State University - Siaton Campus</h4>
+            <p>Bachelor of Science in Information Technology (BSIT)</p>
+            <p>3rd Year College</p>
+        </div>
+
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="skills" id="skills">
+
+        <h2 class="section-title">My Skills</h2>
+        <div class="section-line"></div>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <h3>Java</h3>
+                <p>Object-Oriented Programming</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>HTML</h3>
+                <p>Web Page Development</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Python</h3>
+                <p>Programming and Problem Solving</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Microsoft Office</h3>
+                <p>Word, Excel, and PowerPoint</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+
+        <h2 class="section-title">Contact Me</h2>
+        <div class="section-line"></div>
+
+        <div class="contact-box">
+            <p><strong>Name:</strong> Demcynel John K. Dechoza</p>
+            <p><strong>Age:</strong> 20 years old</p>
+            <p><strong>Course:</strong> BSIT - 3rd Year</p>
+            <p><strong>School:</strong> NORSU Siaton Campus</p>
+            <p><strong>Address:</strong> BRGY. 3, Siaton, Negros Oriental</p>
+            <p><strong>Email:</strong>
+                <a href="mailto:=kibetedemcynel@gmail.com">
+                    kibetedemcynel@gmail.com
+                </a>
+            </p>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            © 2026 <span>Demcynel John K. Dechoza</span>.
+            All Rights Reserved.
+        </p>
+    </footer>
+
+</body>
+</html>
